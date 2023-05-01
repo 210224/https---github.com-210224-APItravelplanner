@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "c0cca8f6-086c-4abc-885f-cfd7c830ca07",
+		"name": "travel api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get cities",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/destination?page=2&perPage=2",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"destination"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						},
+						{
+							"key": "perPage",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "populdate db",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/populate",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"populate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get city",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/destination/Oro Valley",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"destination",
+						"Oro Valley"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add city",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"city\" : \"testing\",\n    \"attraction\" : [\"some\", \"stuff\", \"here\"],\n    \"transport\" : [\"bike\", \"car\", \"plane\"],\n    \"weather\" : \"rainy\",\n    \"cuisine\" : [\"food\", \"items\", \"here\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/destination",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"destination"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update city data",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"attractions\": [],\n    \"transport\": [\n        \"bike\",\n        \"car\",\n        \"plane\"\n    ],\n    \"weather\": \"clear\",\n    \"cuisine\": [\n        \"food\",\n        \"items\",\n        \"here\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/destination/testing",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"destination",
+						"testing"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete city",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/destination/testing",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"destination",
+						"testing"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:3000",
+			"type": "default"
+		}
+	]
+}
